@@ -8,19 +8,20 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
+    background: linear-gradient(135deg, #b3d9ff, #e6f2ff);
     color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 
 /* Header Styling */
 .header {
     width: 100%;
     padding: 20px;
-    background-color: #f4f4f4;
-    border: 1px solid #ccc;
+    background-color: #99c2ff;
+    color: #fff;
     text-align: center;
 }
 
@@ -31,17 +32,23 @@ body {
 }
 
 .profile-photo img {
-    width: 80px;
-    height: 80px;
-    border: 1px solid #333;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #333;
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 50%;
+    background-color: #fff;
 }
 
 .profile-info h1 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.profile-info p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
 }
 
 nav ul {
@@ -56,7 +63,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #fff;
     font-weight: bold;
 }
 
@@ -70,20 +77,24 @@ nav ul li a:hover {
     max-width: 800px;
     margin: 20px 0;
     padding: 20px;
-    background: #fff;
-    border: 1px solid #ccc;
+    background: #e6f7ff;
+    border: 2px solid #99c2ff;
+    border-radius: 10px;
 }
 
 .schools h2,
+.hobbies h2,
 .experience h2 {
     text-align: center;
     font-size: 1.5em;
     margin-bottom: 20px;
+    color: #004080;
 }
 
+/* Schools Grid with 3x2 Layout */
 .schools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     padding: 10px;
 }
@@ -91,51 +102,62 @@ nav ul li a:hover {
 .school-card {
     text-align: center;
     padding: 15px;
-    background-color: #e0e0e0;
-    border: 1px solid #999;
-    border-radius: 5px;
+    background-color: #b3e0ff;
+    color: #333;
+    border: 2px solid #99c2ff;
+    border-radius: 8px;
     font-size: 0.9em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
 }
 
-.experience p {
+.school-card:hover {
+    background-color: #cce6ff;
+}
+
+/* Hobbies Section */
+.hobbies-list {
+    list-style: none;
+    padding: 0;
     text-align: center;
-    font-size: 1em;
 }
 
-.experience form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.experience label {
-    font-size: 1em;
-    margin-bottom: 10px;
-}
-
-.experience textarea {
-    width: 100%;
-    max-width: 600px;
+.hobbies-list li {
+    font-size: 1.1em;
+    margin: 10px 0;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+    background-color: #b3e0ff;
     border-radius: 5px;
-    font-size: 1em;
+    transition: background-color 0.3s;
 }
 
-.experience button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
+.hobbies-list li:hover {
+    background-color: #cce6ff;
 }
 
-.experience button:hover {
-    background-color: #555;
+.experience-list,
+.certificate-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    color: #004080;
+}
+
+.experience-list li,
+.certificate-list li {
+    font-size: 1em;
+    margin: 8px 0;
+    padding-left: 10px;
+    position: relative;
+}
+
+.experience-list li:before,
+.certificate-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #99c2ff;
+    font-weight: bold;
 }
 
 /* Responsive Layout */
@@ -148,7 +170,7 @@ nav ul li a:hover {
     }
 
     .profile-info h1 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 
     .profile-photo img {
